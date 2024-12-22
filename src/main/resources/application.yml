@@ -1,3 +1,13 @@
+server:
+  port: 8888
+
 spring:
   application:
     name: gsu-cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/GS-Util/gsu-config.git
+          search-paths: gsu-server
+          default-label: master
