@@ -8,6 +8,17 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/GS-Util/gsu-config.git
+          uri: git@github.com:GS-Util/gsu-config.git
           search-paths: gsu-server
           default-label: master
+          ignore-local-ssh-settings: true
+          strict-host-key-checking: false
+          host-key: ${SPRING_CLOUD_CONFIG_SERVER_GIT_HOST_KEY}
+          host-key-algorithm: ecdsa-sha2-nistp256
+          private-key: ${SPRING_CLOUD_CONFIG_SERVER_GIT_PRIVATE_KEY}
+          passphrase: ${SPRING_CLOUD_CONFIG_SERVER_GIT_PASSPHRASE}
+        encrypt:
+          enabled: false
+
+encrypt:
+  key: ${ENCRYPT_KEY}
