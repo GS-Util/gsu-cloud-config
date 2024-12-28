@@ -3,7 +3,7 @@ FROM eclipse-temurin:21-jdk-alpine as builder
 COPY . application
 WORKDIR application
 
-ARG JAR_FILE=./build/libs/gsu-bootstrap-api-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=./build/libs/gsu-cloud-config-0.0.1-SNAPSHOT.jar
 RUN cp ${JAR_FILE} ./application.jar
 
 
